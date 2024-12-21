@@ -1,0 +1,6 @@
+@JuniorDotNetTestTaskServiceHostingProcessEquipment_HostAddress = http://localhost:5279
+
+GET {{JuniorDotNetTestTaskServiceHostingProcessEquipment_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
