@@ -67,8 +67,6 @@ public class Program
 
         var app = builder.Build();
 
-       
-
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
@@ -76,14 +74,16 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        // Используем ApiKeyMiddleware для проверки API-ключа
-        app.UseMiddleware<ApiKeyMiddleware>();
+       
         
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
 
         app.MapControllers();
+
+        // Используем ApiKeyMiddleware для проверки API-ключа
+        app.UseMiddleware<ApiKeyMiddleware>();
 
         app.Run();
     }
